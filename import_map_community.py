@@ -274,11 +274,9 @@ def ImportAndCompileMapRefs( refsFile, s2addon, errorCallback ):
 #
 # START
 #
+errorCallback = None
 
 start = time.time()
-
-# save VALVE_NO_AUTO_P4 environment var, set to 1 to ensure p4 lib works in a mode that is disconnected from p4
-utl.SaveEnv()
 
 # inputs
 parser = argparse.ArgumentParser( prog='import_map_community', description='Import a map (vmf) and its dependencies from s1 to s2' )
@@ -303,6 +301,7 @@ s1contentcsgo = args.s1contentdir
 s2gamecsgo = args.s2gameinfodir
 s2addon = args.s2addon
 
+
 s1gamecsgotxt = s1gamecsgo + "\\" + "gameinfo.txt"
 if ( not os.path.exists( s1gamecsgotxt ) ):
 	utl.Error( "%s not found, aborting" % s1gamecsgotxt )
@@ -311,13 +310,16 @@ s2gamecsgogi = s2gamecsgo + "\\" + "gameinfo.gi"
 if ( not os.path.exists( s2gamecsgogi ) ):
 	utl.Error( "%s not found, aborting" % s2gamecsgogi )
 
+os.chdir(s2gamecsgo+"/import_scripts")
+
 s2gameaddondir = "game\\csgo_addons\\" + s2addon
 s2gameaddon = s2gamecsgo.replace( "game\\csgo", s2gameaddondir )
 
 s2contentcsgo = s2gameaddon.replace( "game\csgo_addons", "content\csgo_addons" )
 s2contentcsgoimported = s2contentcsgo
 
-errorCallback = None
+# save VALVE_NO_AUTO_P4 environment var, set to 1 to ensure p4 lib works in a mode that is disconnected from p4
+utl.SaveEnv()
 
 utl.print_color( "WARNING - this script will potentially overwrite imported content in your addon folders?\nEnter to Continue, Esc to Quit", utl.BACKGROUND_RED + utl.FOREGROUND_WHITE )
 bRunImport = True
