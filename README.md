@@ -1,66 +1,63 @@
-# cs2-import-scripts
+# Import Scripts for Importing CSGO maps into CS2
 Modified variant of the CS2 import scripts to run with python3
 
 How to use:
 
-<br />
-=== Prerequisites ===
-==== Precompiled Content ====
-Precompiled content (such as any custom vmt, vtf, mdl, etc.) must be located in the <nowiki>\steam\steamapps\common\Counter-Strike Global Offensive\csgo</nowiki> folder.  For example: 
+## Prerequisites ##
+### Precompiled Content ###
+Precompiled content (such as any custom vmt, vtf, mdl, etc.) must be located in the \steam\steamapps\common\Counter-Strike Global Offensive\csgo folder.  For example: 
 
-<nowiki>\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\
-\steam\steamapps\common\Counter-Strike Global Offensive\csgo\models\</nowiki>
+\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\
+\steam\steamapps\common\Counter-Strike Global Offensive\csgo\models\
 
-'''Notes:''' Any custom content archived in a .bsp will need to be extracted into the appropriate folders before importing. The import tool also requires a vmf, so if you only have a bsp for your map, you will need to decompile it to a .vmf. Finally, '''do not copy .vmf files to the above folder''' as it will confuse the import tool.
+Notes: Any custom content archived in a .bsp will need to be extracted into the appropriate folders before importing. The import tool also requires a vmf, so if you only have a bsp for your map, you will need to decompile it to a .vmf. Finally, '''do not copy .vmf files to the above folder''' as it will confuse the import tool.
 
-<br />
-==== Source Map Files ====
+
+### Source Map Files ###
 Your map files (.vmfs) can live anywhere outside of <nowiki>\Counter-Strike Global Offensive\</nowiki> as long as they are in a <nowiki>\maps\</nowiki> folder. Any prefab or instance vmfs referenced by your map must be in whatever subfolder structure is expected by the map. For example:
 
 <nowiki>c:\mymapfolder\maps\mymap.vmf
 c:\mymapfolder\maps\prefabs\mymapprefab.vmf
 c:\mymapfolder\maps\instances\mymapinsstance.vmf</nowiki>
 
-<br />
-==== Source Texture Files ====
+
+### Source Texture Files ###
 If you have uncompressed source files for textures, (tga, psd, etc.) the import tool will try to use those when importing materials, otherwise it will fall back to converting and recompressing vtf files (which can decrease texture quality). For this to be successful, make sure your source files are in a mirrored location of the vtfs in <nowiki>\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\</nowiki> For example:
 
 <nowiki>c:\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\mymaterial\mytexture.vtf
 c:\mymapfolder\materials\mymaterial\mytexture.tga</nowiki>
 
-<br />
-== Getting Started ==
-=== 1. Installing Python 3 ===
+
+## Getting Started ##
+### 1. Installing Python 3 ###
 To run the import script you will need to install Python 3
 Easiest way to install is by opening powershell and typing "winget install python" and then following the steps through the installation process
 
-<br />
-=== 2. Installing the Colorama Extension ===
+
+### 2. Installing the Colorama Extension ###
 Next you will need a Python extension called colorama. To install this, simply open up a command prompt (search for cmd in Windows Start Menu) and type
 
 <nowiki>python -m pip install colorama</nowiki>
 
 
-<br />
-=== 3. Creating a new Addon with the Workshop Tools ===
+### 3. Creating a new Addon with the Workshop Tools ###
 Before running an import, you will need to create a Workshop Tools addon so that the imported content has a valid destination. To make a new addon, simply launch the game with Workshop Tools, and from the UI click "Create New Addon" and take note of the name for later.
 
-[[File:Maps create addon.png]]
 
-<br />
-=== 4. Locating the Import Script ===
+
+### 4. Locating the Import Script ###
 First up is locating the python import script, which can be found wherever you checked out this git repository.
 
 Once you have located the folder, you will want to open up the windows terminal or powershell. This can be done by simply right clicking in the folder and hitting "Open in Terminal" for Windows 11 or typing "powershell" in the windows explorer address bar (any version of windows)
 
-<br />
-=== 5. Running the Script + Parameters ===
+
+### 5. Running the Script + Parameters ###
 Now you are ready to run the script by entering the following:
 
 <nowiki>python import_map_community.py <s1gameinfopath> <s1contentpath> <s2gameinfopath> <s2addon> <mapname> -usebsp</nowiki>
 
-<br />
-==== Script Parameters ====
+
+### Script Parameters ###
 
 <br />
 :'''<s1gameinfopath>'''
