@@ -59,38 +59,38 @@ Now you are ready to run the script by entering the following:
 
 ### Script Parameters ###
 
-<br />
-:'''<s1gameinfopath>'''
+
+```s1gameinfopath```
 :Path to folder containing CSGO's gameinfo.txt, this MUST be the path that contains the compiled CSGO model and material content you want to import (e.g. .mdl, .vmt).
  
-<br />
-:'''<s1contentpath>'''
+
+```s1contentpath```
 :Path to folder containing source content, (.vmf .psd .tga etc.). As mentioned above, for the importer to successfully find and use source texture files, make sure they are in a mirrored location to that of the .vtfs (see example above)
 
-<br />
-:'''<s2gameinfopath>'''
+
+```s2gameinfopath```
 :Path to folder containing CS2's gameinfo.gi
 
-<br />
-:'''<s2addon>'''
+
+```s2addon```
 :The name of CS2 Workshop addon that you created earlier. This is where your assets will be imported to.
 
-<br />
-:'''<mapname>'''
+
+```mapname```
 :This is the map name (.vmf) without extension, e.g. de_examplemap that you wish to import. If your map sits under a subdirectory of the <nowiki>/maps/</nowiki> folder in <nowiki><s1contentpath></nowiki>. Be sure to add this path before your map name. For example: <nowiki>my_maps/de_examplemap</nowiki>
 
-<br />
-:'''-usebsp'''
+
+```-usebsp```
 :This runs the map through a special vbsp process to generate clean map geometry from brushes, removing hidden faces and stitching up edges, making the CS2 version easier to work with in Hammer. It preserves world (vis) brushes and func_detail brushes for compatibility with S2. This parameter will also merge all func_instances in your map. Note that the final geometry will be triangulated, but cleaning it up is a fairly simple process, which will be explained in another guide.
 
-<br />
-:'''-usebsp_nomergeinstances'''
+
+```-usebsp_nomergeinstances```
 :Use this instead of -usebsp if you wish to both generate clean geo and also preserve func_instances. Note that this takes a little longer as it has to run through the import process twice. The final geometry will also be triangulated.
 
-<br />
-:'''-skipdeps'''
+
+```-skipdeps```
 :Optional: skips importing all dependencies/content and only generates the vmap file(s). This provides a 'quick' import when iterating entities for example. Do not run with this if you are importing for the first time. 
 
-<br />
-'''Example:'''
-<nowiki>python import_map_community.py "C:\steam\steamapps\common\Counter-Strike Global Offensive\csgo" "c:\map_sources\" "C:\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo" de_example_cs2 de_examplemap -usebsp</nowiki>
+
+```Example:```
+python import_map_community.py "C:\steam\steamapps\common\Counter-Strike Global Offensive\csgo" "c:\map_sources\" "C:\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo" de_example_cs2 de_examplemap -usebsp</nowiki>
