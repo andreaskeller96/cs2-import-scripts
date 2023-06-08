@@ -92,5 +92,5 @@ Now you are ready to run the script by entering the following:
 :Optional: skips importing all dependencies/content and only generates the vmap file(s). This provides a 'quick' import when iterating entities for example. Do not run with this if you are importing for the first time. 
 
 
-```Example:```
-python import_map_community.py "C:\steam\steamapps\common\Counter-Strike Global Offensive\csgo" "c:\map_sources\" "C:\steam\steamapps\common\Counter-Strike Global Offensive\game\csgo" de_example_cs2 de_examplemap -usebsp</nowiki>
+###Example:###
+```python import_map_community.py "C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo" "c:\map_sources\" "C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo" de_example_cs2 de_examplemap -usebsp```
