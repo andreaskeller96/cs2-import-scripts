@@ -39,6 +39,7 @@ If you have uncompressed source files for textures, (tga, psd, etc.) the import 
 ### 1. Installing Python 3 ###
 To run the import script you will need to install Python 3
 Easiest way to install is by opening powershell and typing "winget install python" and then following the steps through the installation process
+If this does not work, simply install python through the microsoft store: https://www.microsoft.com/store/productId/9PJPW5LDXLZ5
 
 
 ### 2. Installing the Colorama Extension ###
