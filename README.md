@@ -108,7 +108,7 @@ Explanation for this example:
 * Your CS2 addon should be called ```de_example_cs2```
 
 # KNOWN PITFALLS #
-Avoid all of these, and your import will work:
+Avoid all of these, and your import should work:
 * Do NOT have a .vmf of your map in your csgo folder, i.e. not a single vmf here ```C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo```!!! Not doing so WILL cause the import to fail
 * Do NOT have a space in the path to your vmf file, see Source Map Files for details
 * Move ALL custom content you use into your  ```C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo``` folder, referencing files from the gameinfo.txt WILL NOT WORK
@@ -116,4 +116,5 @@ Avoid all of these, and your import will work:
 * If a texture vmt is broken, the importer WILL FAIL
 * If you use an hdr skybox texture in your map, the import WILL FAIL -> replace this with any other skybox, cs2 will use a different type of skybox anyways
 * Custom clip textures will not be imported, you either have to replace them in s1 hammer with the normal clip or you will need to reassign textures in cs2 (cs2 does not rely on custom clips for footstep sounds, just use the normal clip)
+* On some machines, windows defender will quarantine vbsp.exe in ```\Counter-Strike Global Offensive\game\csgo\import_scripts\bin``` -> if you run into weird vbsp errors make sure the exe is still in that folder, if not then add an exception for the file to your anti virus
 
