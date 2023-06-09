@@ -29,10 +29,10 @@ Personally, I recommend having set up your vmfs as follows.
 
 
 ### Source Texture Files ###
-If you have uncompressed source files for textures, (tga, psd, etc.) the import tool will try to use those when importing materials, otherwise it will fall back to converting and recompressing vtf files (which can decrease texture quality). For this to be successful, make sure your source files are in a mirrored location of the vtfs in \steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\ For example:
+If you have uncompressed source files for textures, (tga, psd, etc.) the import tool will try to use those when importing materials, otherwise it will fall back to converting and recompressing vtf files (which can decrease texture quality). For this to be successful, make sure your source files are in a mirrored location of the vtfs in ```\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\``` For example:
 
-c:\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\mymaterial\mytexture.vtf
-c:\mymapfolder\materials\mymaterial\mytexture.tga
+```c:\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\mymaterial\mytexture.vtf```
+```c:\mymapfolder\materials\mymaterial\mytexture.tga```
 
 
 ## Getting Started ##
