@@ -1,7 +1,6 @@
 # Import Scripts for Importing CSGO maps into CS2
-Modified variant of the CS2 import scripts to run with python3
+### Full credit to valve for the script, i merely adapted it to python3 and made sure it finds all necessary binaries without requiring edits to the PATH environment variable ###
 
-How to use:
 
 ## Prerequisites ##
 ### Precompiled Content ###
