@@ -24,6 +24,7 @@ Personally, I recommend having set up your vmfs as follows.
     * ```C:\csgomapproject\``` and ```C:\mymaps\de_defusalmap\``` work
     * ```C:\csgo map projects\``` and ```C:\my maps\de_defusalmap\``` will NOT WORK
 * create a folder named ```maps``` and copy your vmf, as well as all instances into that folder, keep any subfolders you have for instances, e.g. ```instances/``` and ```instances_lights/```
+    * The resulting folder structure should be ```C:\csgomapproject\maps\de_defusalmap.vmf``` or ```C:\mymaps\de_defusalmap\maps\de_defusalmap.vmf``` for the above examples
 * Make sure your all instances in your vmf file have ```.vmf``` in their ```file``` property, i.e.  ```instances/building.vmf``` is GOOD,  ```instances/building``` will NOT WORK
 
 
