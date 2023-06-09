@@ -4,10 +4,10 @@
 
 ## Prerequisites ##
 ### Precompiled Content ###
-Precompiled content (such as any custom vmt, vtf, mdl, etc.) must be located in the \steam\steamapps\common\Counter-Strike Global Offensive\csgo folder.  For example: 
+Precompiled content (such as any custom vmt, vtf, mdl, etc.) must be located in the ```\steam\steamapps\common\Counter-Strike Global Offensive\csgo``` folder.  For example: 
 
-\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\
-\steam\steamapps\common\Counter-Strike Global Offensive\csgo\models\
+```\steam\steamapps\common\Counter-Strike Global Offensive\csgo\materials\```
+```\steam\steamapps\common\Counter-Strike Global Offensive\csgo\models\```
 
 Notes: Any custom content archived in a .bsp will need to be extracted into the appropriate folders before importing. The import tool also requires a vmf, so if you only have a bsp for your map, you will need to decompile it to a .vmf. Finally, '''do not copy .vmf files to the above folder''' as it will confuse the import tool.
 
