@@ -119,4 +119,5 @@ Avoid all of these, and your import should work:
 * If you use an hdr skybox texture in your map, the import WILL FAIL -> replace this with any other skybox, cs2 will use a different type of skybox anyways
 * Custom clip textures will not be imported, you either have to replace them in s1 hammer with the normal clip or you will need to reassign textures in cs2 (cs2 does not rely on custom clips for footstep sounds, just use the normal clip)
 * On some machines, windows defender will quarantine vbsp.exe in ```\Counter-Strike Global Offensive\game\csgo\import_scripts\bin``` -> if you run into weird vbsp errors make sure the exe is still in that folder, if not then add an exception for the file to your anti virus
+* Naming your s1contentpath folder ```csgo``` seems to break the importer, so choose a different folder name to be safe
 
