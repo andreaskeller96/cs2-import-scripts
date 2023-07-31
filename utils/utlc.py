@@ -124,7 +124,7 @@ def SaveEnv():
 	newPath = os.path.abspath("../../bin/win64/")
 	if newPath not in os.environ['PATH']:
 		os.environ['PATH']+=f";{newPath}"
-	bRestoreEnv = True;
+	bRestoreEnv = True
 
 # restore local env
 def RestoreEnv():
@@ -168,8 +168,9 @@ def RunCommand(cmd, errorCallback = None):
 		subprocess.check_call( cmd , shell=True )
 	except subprocess.CalledProcessError as e:
 		if errorCallback is not None:
-			errorCallback()
-		Error ( "Error running:\n>>>%s\nAborting" % cmd )
+			errorCallback(cmd)
+		else:
+			Error ( "Error running:\n>>>%s\nAborting" % cmd )
 
 def EnsureFileWritable( fname ):
 	if ( os.path.exists( fname ) ):

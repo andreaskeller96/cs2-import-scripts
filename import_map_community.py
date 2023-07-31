@@ -271,6 +271,16 @@ def ImportAndCompileMapRefs( refsFile, s2addon, errorCallback ):
 #
 ##########################################################################################################################################
 
+missing_models = []
+
+def ErrorMDLNotFound(cmdName = ""):
+	global missing_models
+	missing_models.append(cmdName)
+
+##########################################################################################################################################
+#
+##########################################################################################################################################
+
 #
 # START
 #
@@ -348,8 +358,9 @@ if ( not skipdeps ):
 	# We strip out models as they go through the new importer last
 	StripMDLsFromRefs( s2contentcsgoimported + "\\maps\\" + mapname + "_prefab_refs.txt" )
 
+
 	# now import mdls (as modeldoc), and their materials
-	ImportAndCompileMapMDLs( s2contentcsgoimported + "\\maps\\" + mapname + "_prefab_mdl_lst.txt", s2addon, errorCallback )
+	ImportAndCompileMapMDLs( s2contentcsgoimported + "\\maps\\" + mapname + "_prefab_mdl_lst.txt", s2addon, ErrorMDLNotFound )
 
 	# import refs (excluding mdls)
 	ImportAndCompileMapRefs( s2contentcsgoimported + "\\maps\\" + mapname + "_prefab_new_refs.txt", s2addon, errorCallback )
@@ -362,6 +373,12 @@ if ( not skipdeps ):
 infile = s2contentcsgo + "\\maps\\" + mapname + ".vmap"
 if ( not os.path.exists( infile ) ):
 	utl.RunCommand( "xcopy " + s2contentcsgoimported + "\\maps\\" + mapname + ".vmap " + s2contentcsgo + "\\maps\\" + "*" )
+
+# output list of models that were not found
+if len(missing_models)>0:
+	utl.print_color(f"{len(missing_models)} Models failed to import:", utl.FOREGROUND_WHITE + utl.BACKGROUND_RED)
+	for model in missing_models:
+		print(model)
 
 #
 # FINISH
