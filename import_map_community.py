@@ -130,7 +130,9 @@ def ImportAndCompileMapMDLs( filename, s2addon, errorCallback ):
 	# read list of models to convert
 	mdlfiles = utl.ReadTextFile( filename )
 
-	if ( len( mdlfiles ) < 1 ): utl.Error( "Nothing to convert" )
+	if ( len( mdlfiles ) < 1 ): 
+		utl.print_I( "No model to convert" )
+		return
 
 	print( "Importing models" )
 	print( "--------------------------------")
